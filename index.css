@@ -115,77 +115,120 @@ HEADER COMPONENT DESKTOP
 /*---------------------------------------------------------
 PRINCIPAL COMPONENT DESKTOP
 ----------------------------------------------------------*/
-.principal{
-    background:var(--backgrond-color);  
-    height:100%;
+section{
+    margin-bottom:2rem;
 }
-.titlePrincipal{
+
+section h1{
     color:white;
-    font-size:3.5rem;
-    font-weight:bold;
     font-family:var(--titulares);
     text-align:center;
-    margin:2rem 0rem;
+    font-size:4rem;
+}
+
+section p{
+    color:white;
+    font-size:2rem;
+    text-align:center;
+}
+
+.infoFox{
+    display:flex;
+    flex-direction:column;
+    background:var(--main-color);
+    margin:0 1rem;
+    border-radius:1rem;
+    border:.1rem dashed var(--relevante);
+    padding:1rem 2.5rem;
+}
+
+.infoFox p{
+    color:white;
+    font-size:4rem;
+    text-align:left;
+    margin-right:5rem;
+}
+
+.infoFox li{
+    font-size:1.8rem;
+    margin-bottom:.5rem;
+}
+
+section li{
+    color:white;
+    font-size:1.6rem;
+}
+
+.reference{
+    align-self:flex-end;
+    margin-bottom:1rem;
+}
+
+.reference a{
+    color:white;
+    font-size:1.6rem;
+    margin-bottom:1.5rem;
 }
 
 
-#app{
+#foxImg{
+    width:20rem;
+    height:20rem;
+    object-fit:cover;   
+}
+
+
+
+.contenedorImg{
     background:var(--main-color);
-    padding:3rem;
-    margin:2rem 2rem;
-    border-radius:1rem;
+    border:dashed .1rem #DE02FF;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
+    padding:1rem;
+    margin:0rem 2rem;
     justify-content:center;
 }
 
-.containAvo{
+#foxImg{
     border:dashed .1rem var(--relevante);
-    border-radius:1rem;
-    margin:1rem;
-    width:20rem;
+    
+}
+
+.waitImg{
+    background:#C6CDD5;
+    width:25rem;
     height:25rem;
-    text-align:center;
-    color:white;
-}
-
-.containAvo:hover{
-    width:20.3rem;
-    height:25.3rem;
-}
-
-.containAvo .description h2{
-    margin-top:1rem;
-    font-size:1.7rem;
-}
-
-.containAvo .description p{
-    font-size:2rem;
+    margin:1rem;
 }
 
 
 
-.containAvo img{
-    width:100%;
-    height:70%;
-    object-fit:cover;
-    border-radius:1rem;
-}
-
-.pie{
-    width:50%;
-    text-align:center;
-    font-size:1.8rem;
+.containerBtn{
     margin:0 auto;
-    margin-bottom:1rem;
-    color:white;
+    width:50%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    position:sticky;
+    top:0;
 }
 
-.pie a {
-    color:white;
-    text-decoration:none;
+
+
+.btnObtener , .btnClean{
+    padding:1rem;
+    font-size:2rem;
+    font-weight:bold;
+    font-style:italic;
+    border-radius:.5rem;
+    border:none;
+    margin:0rem 1rem;
+    margin-bottom:3rem;
+    background-color: rgba(247, 247, 253, 0.6);
 }
+
+
 
 
 
@@ -314,47 +357,95 @@ HEADER - MOBIL
 /*---------------------------------------------------------
 P R I N C I P A L
 ----------------------------------------------------------*/
-.titlePrincipal{
-    text-align:center;
+#app{
+    padding:1rem;
+}
+
+section{
+    padding:1rem;
+}
+
+section .titleFox{
     font-size:3rem;
     color:white;
-    font-family:var(--titulares);
-}    
-
-.containAvo{
-    background:var(--main-color);
-    border:dashed .1rem var(--relevante);
-    border-radius:1rem;
-    margin:2rem;
-    padding:2rem;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.containAvo img{
-    border-radius:1rem;
-}
-
-.nameAvocado, .descriptionAvo{
-    color:white;
     text-align:center;
-    font-size:2.5rem;
-    margin-top:1rem;
 }
 
-.pie{
+
+
+.introProyect{
+    color:white;
+    font-size:2rem;
+    text-align:center;
+}
+
+.infoFox{
+    background:var(--main-color);
     color:white;
     font-size:1.6rem;
-    text-align:center;
-    margin: 1rem 2rem;
+    padding:1rem;
+    border:.1rem dashed var(--relevante);
+    border-radius:1rem;
+    display:flex;
+    flex-direction:column;
+    margin:0rem 0rem;
 }
 
-.pie a{
+
+.reference{
+    display:flex;
+    flex-direction:column;
+}
+
+.reference a{
     color:white;
+    display:inline-block;
+    text-align:right;
+    align-self:flex-end;
 }
 
+.containerBtn{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:1rem;
+    position:sticky;
+    top:0;
+}
+
+.btnClean, .btnObtener{
+    padding:1rem;
+    font-size:1.6rem;
+    border:none;
+    border-radius:.5rem;
+}
+
+.btnObtener{
+    margin-right:.3rem;
+}
+
+.imgApp{
+    margin-top:2rem;
+}
+
+.contenedorImg{
+    display:flex;
+    flex-direction:column;
+
+}
+
+#foxImg{
+    margin-top:1rem;
+    width:90vw;
+}
+
+.waitImg{
+    background:#C6CDD5;
+    width:90vw;
+    height:25rem;
+    margin:0rem auto;
+}
 /*---------------------------------------------------------
 FOOTER COMPONENT - M O B I L E
 ----------------------------------------------------------*/

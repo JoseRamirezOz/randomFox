@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://elastic-leavitt-b60c86.netlify.app/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -16,7 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
-    <title>AvocadoShop</title>
+    <title>RandomFox</title>
+    <!-- Emojis  -->
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
 </head>
 <body>
 <!----------------------------------------------------------
@@ -24,7 +26,7 @@
 ------------------------------------------------------------->
     <nav class="navbar navbar-expand-lg navbar-light" >
         <div class="container-fluid" id="NavBar-Principal">
-          <a class="navbar-brand" href="/index.html">
+          <a class="navbar-brand" href="https://joseramirezoz.github.io/index.html">
               <img src="https://elastic-leavitt-b60c86.netlify.app/logo.jpg" alt="LogoSoftJins">
               JoseRamirezOz
           </a>
@@ -49,14 +51,34 @@
 <!----------------------------------------------------------
  M A I N 
 ------------------------------------------------------------->
-<section class="principal">
-    <h1 class="titlePrincipal">Mini Preview Shop Avocado</h1>
-    <div id="app">
-    </div>
-    <p class="pie">La alimentación de datos e imagenes 
-        provienen de la API externa de <a href="https://platzi-avo.vercel.app/api/avo" rel="noopener" target="_blank">@platziAvo</a>
-    </p>
+<section>
+  <h1 class="titleFox">Zorros Random</h1>
+  <p class="introProyect">Puedes cargar mas de 100 imagenes
+    distintas, Enjoy! <i class="em em-fox_face" aria-role="presentation" aria-label="FOX FACE"></i>
+  </p>
+
+  <article class="infoFox">
+    <p class="titleCuriosity"><b>¿Sabias que?</b></p>
+    <ol>
+      <li>El zorro rojo o común es el más popular de todos. Es un animal muy cauteloso que habita mayoritariamente en Europa, Australia y América del Norte</li>
+      <li>Los zorros tienen más de 12 sonidos diferentes para comunicarse entre ellos. Además, cada zorro emite un tono único que les ayuda a reconocerse.</li>
+      <li>Estos mamíferos poseen una gran vista y pueden ver tan bien como un gato. De hecho, sus ojos se asemejan a los de los mininos debido a sus pupilas cortadas verticalmente.</li>
+    </ol>
+    <div class="reference"><a  href="https://www.muyinteresante.es/naturaleza/fotos/curiosidades-sobre-los-zorros-241599001183/1">Fuente: Rocío Sanchez - 02/09/2020 - MuyInteresante </a></div>
+  </article>
+
+
 </section>
+
+<div id="app">
+  <section class="imgApp">
+    <div class="containerBtn">
+      <button href="#" class="btnObtener">Objener Imagen</button>
+      <button href="#" class="btnClean">Limpiar</button>
+    </div>
+  </section>
+</div>
+
 
 
 <!----------------------------------------------------------
@@ -79,7 +101,8 @@
         </picture>
     </article>
   </footer>
-  <script src="/index.js"></script>
+  <script src="index.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

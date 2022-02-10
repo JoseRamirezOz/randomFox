@@ -1,65 +1,98 @@
-console.log('Ok')
-
-//Guardamos en una variable la url
-const baseUrl = 'https://platzi-avo.vercel.app'
-const appNode = document.querySelector('#app')
-
-appNode.addEventListener('click',
-	(evento)=>{
-		if(evento.target.nodeName === 'H1'){
-			appNode.append(document.createElement('h5'))
-		}
-	}
-);
+/*----------------------------------------------------
+DESARROLLO APP JAVASCRIPT 
+------------------------------------------------------*/
+const $imgApp = document.querySelector('.imgApp') 
+const min = 1
+const max = 123
+const random = () => Math.floor(Math.random()*(max-min))+min
+/*--End Global--*/
 
 
+const addImg = ()=>{
+    const $verificador = document.querySelector('.contenedorImg')
+    let $containImgs;
 
-// API de Internacionalizacion
-const formatPrice = (price) =>{
-	const newPrice = new window.Intl.NumberFormat('en-EN',{
-		style:'currency',
-		currency:'USD'
-	}).format(price)
+    let loadImg = document.createElement('div')
+    loadImg.className=`waitImg`
 
-	return newPrice
+    if($verificador == null){
+        $containImgs = document.createElement('div') 
+        $containImgs.className='contenedorImg'
+        $imgApp.appendChild($containImgs)
+        $containImgs.append(loadImg)
+    } else if($containImgs == undefined){
+        $verificador.append(loadImg)
+    }
+}
+const $addImgDom = document.querySelector('.btnObtener')
+$addImgDom.addEventListener('click', addImg)
+
+
+
+//FUNCIONALIDAD PARA ELIMINAR
+const fnEliminarNodo = ()=>{
+    let $nodoImgs = document.querySelector(".contenedorImg");    
+   
+    if($nodoImgs != undefined){
+        $nodoImgs.remove()
+    }
+    
+}
+const $btnEliminar = document.querySelector(".btnClean")
+$btnEliminar.addEventListener("click", fnEliminarNodo)
+
+
+
+
+/*L A Z Y ---- L O A D I N G*/
+//Funcion generadora de imagenes 
+const generateImg = ()=>{
+    const $imagen = document.createElement('img')    
+    $imagen.src=`https://randomfox.ca/images/${random()}.jpg`
+    $imagen.className='mx-auto'
+    $imagen.width='320'
+    $imagen.style.setProperty('margin-bottom','10px')
+    $imagen.id=`foxImg` 
+    $imagen.style.setProperty('transition','.1 ease-in-out all')
+    return $imagen
 }
 
-/*Usamos una web API, en este caso fetch*/
-window.fetch(`${baseUrl}/api/avo`)
+//Accion
+function remplazar(entradas, observador){
+    entradas.forEach((e)=>{
+        if(e.isIntersecting){  
+            const $bloqueImgs = document.querySelector('.contenedorImg')
+            const $toReplace = document.querySelector('.waitImg')
+            $toReplace.replaceWith(generateImg())
+        }
+    })
 
-//Procesar respuesta y convertirla en JSON
-.then((respuesta)=>respuesta.json())
-// JSON → Data → Renderiza info browser
-.then((respuestaJSON)=>{
-	const allItems = []
-
-	respuestaJSON.data.forEach((e,i)=>{
-		const imagen = document.createElement('img')
-		imagen.src = `${baseUrl}${e.image}`
+}
 
 
-		const title = document.createElement('h2')
-		title.className="nameAvocado"
-		title.textContent = e.name
 
-		const price = document.createElement('p')
-		price.className="descriptionAvo"
-		price.textContent = e.price
-		price.textContent = formatPrice(e.price);
 
-		const subElem = document.createElement('div')
-		subElem.append(title, price)
-		subElem.className='description'
+function escuchando(){    
+    const watch = document.querySelector('.waitImg') 
+    //OBSERVADOR
+    const observador = new IntersectionObserver(remplazar,{
+        root:null,
+        rootMargin:'0px',
+        threshold:1   
+    })
+    
+    observador.observe(watch)
+}
 
-		const container = document.createElement('div')
-		container.className = 'containAvo'
-		container.append(imagen, subElem);
-		allItems.push(container)
-	})
 
-	appNode.append(...allItems)
+$addImgDom.addEventListener('click',escuchando)
 
-	console.log(respuestaJSON.data)
-});
 
-/*Agregando mas info desde JS*/
+
+
+
+
+
+//Testing
+
+
